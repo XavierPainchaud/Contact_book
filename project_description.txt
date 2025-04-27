@@ -1,0 +1,42 @@
+1. Project Overview
+A text-based address book application that runs in the console, letting users manage their personal contacts through a simple menu-driven interface.
+
+2. Core Functionalities
+Add a Contact
+Prompt the user for fields such as first name, last name, phone number, email address, postal address, and an optional notes field.
+Validate required fields (e.g. phone number format, non‐empty names).
+View All Contacts
+Display a numbered list of all stored contacts in a readable tabular form (e.g. “1. Smith, John – (555) 123-4567”).
+Search Contacts
+Allow searching by any attribute (e.g. last name, phone substring, email domain).
+Show matching results or “no matches found” message.
+Edit a Contact
+Let the user pick a contact by its list number or unique ID, then update individual fields.
+Delete a Contact
+Confirm before removal, then delete from the in-memory store.
+Persist & Load
+On startup, load existing contacts from a file (e.g. CSV or serialized objects).
+On exit or after each change, save the current state back to that file so data isn’t lost between runs.
+Exit
+Gracefully terminate the program, ensuring any unsaved changes are written to disk.
+
+3. Non-Functional Considerations
+Input Validation & Error Handling
+Handle invalid menu choices (e.g. letters where numbers are expected).
+Catch file I/O errors and show user-friendly messages.
+User Experience
+Clear prompts, confirmations for destructive actions, and concise success/failure feedback.
+Extensibility
+Design so new fields (birthday, company, tags) or features (grouping, favorites) can be added without rewriting core logic.
+
+4. Suggested High-Level Components
+Contact: a simple data class holding all contact fields.
+ContactBook: manages a collection of Contact objects (add, remove, search, sort).
+StorageManager: handles reading from/writing to file.
+ConsoleUI: presents the menu, reads user input, invokes ContactBook and StorageManager methods, and displays results.
+
+5. Stretch Goals
+Sorting & Paging: sort by last name or paginate long lists.
+Import/Export: support CSV import or vCard export.
+Birthday Reminders: flag and list upcoming birthdays.
+Tagging & Filtering: let users assign tags (e.g. “work”, “family”) and filter by them.

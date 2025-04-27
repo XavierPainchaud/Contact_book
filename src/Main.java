@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Contact Xavier = new Contact("Xavier", "Painchaud", "819-998-1564");
+        System.out.println(Xavier.phoneNumber);
     }
 }
